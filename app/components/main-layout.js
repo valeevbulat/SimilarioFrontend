@@ -8,8 +8,8 @@ const MainLayout = React.createClass({
         <header className="primary-header"></header>
         <aside className="primary-aside">
           <ul>
-            <li><Link to="/" activeClassName="active">Home</Link></li>
-            <li><Link to="/login" activeClassName="active">Login</Link></li>
+            <li><Link to="/" activeClassName="active">Главная</Link></li>
+            <li><Link to="/login" activeClassName="active">Авторизация</Link></li>
           </ul>
         </aside>
         <main>
