@@ -135,3 +135,4 @@ export default React.createClass({
 ```
 
 This just saves us some keystrokes, but as stated before, the examples use the other way with the constant because it might be easier for beginners to ES6 modules to grasp.
+
