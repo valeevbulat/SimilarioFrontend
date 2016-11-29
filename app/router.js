@@ -14,6 +14,7 @@ import SearchLayout from './components/search-layout';
 import Home from './components/home';
 import Authorization from './components/authorization';
 import UserProfile from './components/user-profile';
+import Songs from './components/songs';
 import NotFound from './components/not-found';
 
 export default (
@@ -22,6 +23,8 @@ export default (
       <Route path="/" component={Home} />
 
       <Route path="login" component={Authorization} />
+
+      <Route path="songs" component={Songs} />
 
       <Route path="user/:userId" component={UserProfile} />
 

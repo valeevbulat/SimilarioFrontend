@@ -32,9 +32,14 @@ export default class Authorization extends Component {
         if(nickname){
             login(nickname,(res, err) =>{
                 if(err) return console.log(err);
-                else{
+                if(res.userId)
+                {
                     this.setState({userId: res.userId});
                     cookie.save('userId', res.userId, {path: '/'});
+                }
+                else{
+                    this.setState({error: !this.state.error});
+                    this.setState({errorMsg: 'Ошибка авторизации'})
                 }
             });
 

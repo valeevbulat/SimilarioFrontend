@@ -2,8 +2,10 @@
 
 import Config from '../config';
 
-
 function json(response) {
+    if (!response.ok) {
+        throw response.status;
+    }
     return response.json()
 }
 function status(response) {
@@ -11,24 +13,11 @@ function status(response) {
     return response
 }
 
-function getUser(userId) {
-    const myHeaders = new Headers();
-
-    const myInit = {
-        method: 'GET',
-        mode: 'cors',
-        headers: myHeaders
-    };
-    return fetch(`${Config.API_URL}/users/${userId}`, myInit)
-        .then(json)
-        .then((responseJson) => console.log(responseJson));
-}
-
-function getId(nickname){
+function regUser(nickname) {
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
 
-    const myInit = {
+    const respConf = {
         method: 'POST',
         mode: 'cors',
         headers: myHeaders,
@@ -36,15 +25,41 @@ function getId(nickname){
             login: nickname
         })
     };
-    return fetch(`${Config.API_URL}/users/login`, myInit)
+
+    return fetch(`${Config.API_URL}/users`, respConf)
         .then(json)
-        .then((responseJson) => console.log(responseJson))
-        .catch((error) => console.log(error))
+        .then((responseJson) => responseJson.user.id)
+}
+
+function getId(nickname){
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+
+    const respConf = {
+        method: 'POST',
+        mode: 'cors',
+        headers: myHeaders,
+        body: JSON.stringify({
+            login: nickname
+        })
+    };
+    return fetch(`${Config.API_URL}/users/login`, respConf)
+        .then(json)
+        .then((responseJson) => responseJson.user.id)
 }
 
 function login(nickname, cb){
-    getId(nickname);
-    cb({userId: '5'}, null)
+    getId(nickname)
+        .then((userId) => cb({userId: userId}, null))
+        .catch((error) => {
+            if(+error == 404){
+                regUser(nickname)
+                .then((userId) => cb({userId: userId}, null))
+                .catch((error) => cb(null, error));
+            }else{
+                cb(null, error)
+            }
+        });
 }
 
 export {

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp && gulp watch"
   },
   "author": "Brad Westfall <brad@azpixels.com>",
   "license": "ISC",

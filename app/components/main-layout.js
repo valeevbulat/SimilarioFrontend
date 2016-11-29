@@ -10,6 +10,7 @@ const MainLayout = React.createClass({
           <ul>
             <li><Link to="/" activeClassName="active">Главная</Link></li>
             <li><Link to="/login" activeClassName="active">Авторизация</Link></li>
+            <li><Link to="/songs" activeClassName="active">Аудиозаписи</Link></li>
           </ul>
         </aside>
         <main>
