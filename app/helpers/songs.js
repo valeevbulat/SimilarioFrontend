@@ -45,7 +45,7 @@ function uploadSong(song, id, cb) {
 
     fetch(`${Config.API_URL}/users/${id}/songs`, respConf)
         .then(json)
-        .then((responseJson) => cb(null, responseJson))
+        .then((responseJson) => cb(false, responseJson))
         .catch((e) => cb(true, e))
 
 }
