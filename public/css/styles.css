@@ -1,5 +1,6 @@
 .app {
   display: flex;
+    font-family: Arial;
 }
 
 aside.primary-aside {
@@ -12,4 +13,43 @@ aside.primary-aside a.active {
 
 main {
   flex: 1;
+}
+
+.dropzone{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 20px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    border: 2px dashed yellow
+}
+
+.preloader{
+    border: none;
+}
+.preloader img{
+    stroke: #000;
+}
+
+.dropzone--active{
+    background: yellow;
+}
+
+.songLists{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.error{
+    color: red;
+    text-align: left;
+    padding: 20px 0;
+}
+.success{
+    color: green;
+    text-align: center;
+    padding: 20px 0;
 }

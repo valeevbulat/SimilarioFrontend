@@ -1,7 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
-import { getSongList } from '../helpers/songs'
 import SongsList from './songs-list';
+import UploadSongs from './upload-songs';
 import cookie from 'react-cookie';
 
 export default class Songs extends Component {
@@ -34,7 +34,12 @@ export default class Songs extends Component {
     }
 
     renderListSongs(){
-        return <SongsList userId={this.state.userId} />
+        return(
+            <div>
+                <UploadSongs userId={this.state.userId}/>
+                <SongsList userId={this.state.userId} />
+            </div>
+            )
     }
 
     render() {
