@@ -15,7 +15,7 @@ export default class UploadSongs extends Component {
             error: false,
             errorMsg: [<li key="0">{""}</li>],
             success: false,
-            successMsg: ''
+            successMsg: [<li key="0">{""}</li>]
         };
 
         this.onDrop = this.onDrop.bind(this)
@@ -31,15 +31,21 @@ export default class UploadSongs extends Component {
         if (this.state.errorMsg !== nextState.errorMsg) {
             return true;
         }
+        if (this.state.success !== nextState.success) {
+            return true;
+        }
+        if (this.state.successMsg !== nextState.successMsg) {
+            return true;
+        }
         return true;
     }
 
     onDrop(acceptedFiles, rejectedFiles) {
         this.setState({
             error: false,
-            errorMsg: '',
+            errorMsg: [<li key="0">{""}</li>],
             success: false,
-            successMsg: ''
+            successMsg: [<li key="0">{""}</li>]
         });
         if(rejectedFiles.length > 0){
             let list = [<li key={this.list.length}>{'Ошибка валидации файл(а/ов)'}</li>]
@@ -70,12 +76,16 @@ export default class UploadSongs extends Component {
                             errorMsg: list
                         });
                     }else {
-
-
+                        let listS;
+                        if(this.state.success){
+                            listS = this.state.successMsg;
+                            list.push(<li key={i}>{'Файл загружен - ' + item.name}</li>)
+                        }else{
+                            listS = [<li key={i}>{'Файл загружен - ' + item.name}</li>]
+                        }
                         this.setState({
-                            success: !this.state.success,
-                            successMsg: 'Файл загружен',
-
+                            success: true,
+                            successMsg: listS
                         });
                     }
 
@@ -114,7 +124,9 @@ export default class UploadSongs extends Component {
         if(this.state.success){
             success = (
                 <div className="success">
-                    {this.state.successMsg}
+                    <ul>
+                        {this.state.successMsg}
+                    </ul>
                 </div>
             );
         }else {
@@ -128,6 +140,7 @@ export default class UploadSongs extends Component {
                         <div>Переместите файлы в эту область или кликните сюда для их загрузки.</div>
                     </Dropzone>
                     {error}
+                    {success}
                 </div>
             );
         }else {
@@ -137,6 +150,7 @@ export default class UploadSongs extends Component {
                         <img src="/images/preloader-black.svg" width="37px" />
                     </div>
                     {error}
+                    {success}
 
                 </div>
             );

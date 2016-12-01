@@ -43,13 +43,11 @@ main {
     flex-wrap: nowrap;
 }
 
-.error{
+.error, .success{
     color: red;
     text-align: left;
     padding: 20px 0;
 }
 .success{
     color: green;
-    text-align: center;
-    padding: 20px 0;
 }
