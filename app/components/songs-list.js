@@ -7,7 +7,8 @@ export default class SongsList extends Component {
         super(props);
 
         this.state =  {
-            list: [<li key="0">Загрузка адиозаписей...</li>]
+            list: [<li key="0" style={{'listStyle': 'none'}}> <img src="/images/preloader.svg" /> </li>],
+            recommendedSongs: [<li key="0" style={{'listStyle': 'none'}}> <img src="/images/preloader.svg" /> </li>]
         };
     }
 
@@ -15,31 +16,61 @@ export default class SongsList extends Component {
         if (this.state.list !== nextState.list) {
             return true;
         }
+        if (this.state.recommendedSongs !== nextState.recommendedSongs) {
+            return true;
+        }
         return false;
     }
 
-    render() {
+    componentWillMount(){
+        this.uploadList()
+    }
+
+    uploadList(){
         const userId = this.props.userId;
         getSongList(userId, (res, err) => {
             if(!err){
                 let songList = [];
-                res.forEach( (item, i) => {
+                let recommendedList = [];
+                let songs = res.songs;
+                let recommended = res.recommended;
+                songs.forEach( (item, i) => {
                     songList.push(<li key={i}>{(item.artists[0].yandex_name ? item.artists[0].yandex_name : item.artists[0].name)+ "-" + item.title}</li>)
 
                 });
+                recommended.forEach( (item2, j) => {
+                    recommendedList.push(<li key={j}>{(item2.yandex_name ? item2.yandex_name : item2.name)}</li>)
+
+                });
+
                 this.setState({
                     list: songList
-                })
+                });
+                this.setState({
+                    recommendedSongs: recommendedList
+                });
             }
         });
+    }
 
+    render() {
         return(
-            <div>
-                <h1>Список аудиозаписей</h1>
+            <div  className="songLists">
+                <div className="songList">
+                    <h1>Список аудиозаписей</h1>
 
-                <ol>
-                    {this.state.list}
-                </ol>
+                    <ol className="songList">
+                        {this.state.list}
+                    </ol>
+                </div>
+                <div className="songList">
+                    <h1>Список рекоммендаций</h1>
+
+                    <ol>
+                        {this.state.recommendedSongs}
+                    </ol>
+                </div>
+
             </div>
         )
     }
