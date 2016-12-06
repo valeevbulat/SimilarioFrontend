@@ -1,6 +1,7 @@
 "use strict";
 
 import Config from '../config';
+import {translit, rus} from './transliterate';
 
 function json(response) {
     if (!response.ok) {
@@ -29,11 +30,19 @@ function getSongList(userId, cb){
 }
 
 function uploadSong(song, id, cb) {
+    let songName = song.name.trim();
+
+    for (let i = 0; i < songName.length; i++) {
+        if(~rus.indexOf(songName[i])){
+            songName = translit(songName, 5); break;
+        }
+    };
+
     const myHeaders = new Headers();
     myHeaders.append('Content-Type', 'audio/mpeg');
-    myHeaders.append('Filename', "ddd.mp3");
+    myHeaders.append('Filename', songName);
 
-    var formData = new FormData()
+    let formData = new FormData()
     formData.append('file', song);
 
     const respConf = {
@@ -45,10 +54,11 @@ function uploadSong(song, id, cb) {
 
     fetch(`${Config.API_URL}/users/${id}/songs`, respConf)
         .then(json)
-        .then((responseJson) => cb(false, responseJson))
-        .catch((e) => cb(true, e))
+        .then((responseJson) => cb(null, responseJson))
+        .catch((e) => cb('Error', e))
 
 }
+
 
 export {
     getSongList,
