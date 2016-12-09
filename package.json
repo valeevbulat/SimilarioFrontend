@@ -9,8 +9,10 @@
   "author": "Brad Westfall <brad@azpixels.com>",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.13.4",
     "react": "0.14.7",
+    "react-bootstrap": "^0.30.7",
     "react-cookie": "^0.4.8",
     "react-dom": "0.14.7",
     "react-dropzone": "^3.7.3",

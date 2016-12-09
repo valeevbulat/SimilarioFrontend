@@ -1,19 +1,87 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#root{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 0 -100px 0; /* отрицательный нижний отступ на высоту футера */
+    padding: 0;
+    background-color: #F5F8FA; 
+}
+
+.sign-in-back{
+   background: #ffffff; 
+   padding: 20px;
+   width: 50%;
+   text-align: center;
+   margin-top: 5%;
+   margin-left: auto;
+   margin-right: auto;
+   width: 100%;
+}
+
+.sign-in-title{
+   margin-bottom: 20px;
+}
+
+.btn{
+   margin-top: 30px;
+}
+
+
+.img-music{
+    background-image: url(/images/icon_main.svg);
+}
+
+.navbar{
+    font-size: 18px;
+}
+
+.nav .navbar-nav{
+    font-size: 18px;   
+}
+
+.home-page{
+    margin-top: 50px;
+}
+ 
+/* footer styles */
+.footer-bottom {
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+}
+
+.footer-text{
+    color: #999999;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+
+/* footer */
+
 .app {
   display: flex;
-    font-family: Arial;
+  font-family: Arial;
 }
 
 aside.primary-aside {
   width: 200px;
+
 }
 
 aside.primary-aside a.active {
     font-weight: bold;
 }
 
-main {
-  flex: 1;
-}
+
 
 .dropzone{
     display: flex;
@@ -41,6 +109,11 @@ main {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
+    margin-bottom: 10%;
+}
+
+.songList h1{
+   margin-bottom: 30px;
 }
 
 .error, .success{
@@ -51,3 +124,43 @@ main {
 .success{
     color: green;
 }
+
+
+.panel-white {
+  color: #333;
+  background-color: #fff;
+  border-color: #ddd;
+  padding: 10px;
+  list-style: none;
+  font-size: 18px;
+}
+
+.panel-white img{
+   width: 25px;
+   height: 25px;
+   float: left;
+   margin-right: 10px;
+}
+
+
+
+/*home page styles*/
+.home-title{
+    font-size: 90px;
+}
+
+.home-desc{
+    font-size: 30px;
+}
+
+/* home page styles*/
+
+.alert-text{
+   padding-left: 10px;
+}
+
+.sign-out-button{
+   text-align: center;
+
+}
+

@@ -57,25 +57,35 @@ export default class Authorization extends Component {
 
     renderLogOut(){
         return(
-            <div>
-                <button onClick={this.onLogout}>Выйти</button>
+            <div className="row">
+                <div className="col-md-12 sign-out-button">
+                    <button onClick={this.onLogout} className="btn btn-danger btn-large">Выйти</button>
+                </div>
             </div>
         )
     }
 
     renderLogIn(){
         return(
-            <div>
-                <h1>Войти</h1>
-                <input type="text" value={this.state.nickname} onChange={this.handleChangeNickname} />
-                <button onClick={this.onLogin}>Авторизоваться</button>
+             <div className="row">
+                <div className="col-md-12">
+                    <div className="sign-in-back">
+                        <h1 className="sign-in-title">Вход</h1>
+                        <div className="form-group">
+                            {this.state.error ? (
+                                <div className="alert alert-danger">{this.state.errorMsg}</div>
+                            ) : (
+                                <div></div>
+                            )} 
+                            <input type="text" value={this.state.nickname} onChange={this.handleChangeNickname} className="form-control" placeholder="Введите логин" />
+                            <button onClick={this.onLogin} className="btn btn-success">Авторизоваться</button> 
 
-                {this.state.error ? (
-                    <div style={{color: "#cc0000"}}>{this.state.errorMsg}</div>
-                ) : (
-                    <div></div>
-                )}
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
+            
         )
     }
 
