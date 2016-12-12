@@ -49,7 +49,6 @@ html, body {
 .home-page{
     margin-top: 50px;
 }
- 
 /* footer styles */
 .footer-bottom {
     height: 100px;
@@ -63,10 +62,7 @@ html, body {
     font-size: 18px;
     padding-top: 20px;
 }
-
-
 /* footer */
-
 .app {
   display: flex;
   font-family: Arial;
@@ -74,38 +70,36 @@ html, body {
 
 aside.primary-aside {
   width: 200px;
-
 }
 
 aside.primary-aside a.active {
     font-weight: bold;
 }
 
-
-
-.dropzone{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    padding: 20px;
-    color: #000;
+.dropzone {
     font-family: Arial;
     font-weight: bold;
-    border: 2px dashed yellow
+    display: flex;
+    padding: 20px;
+    color: #000;
+    border: 2px dashed yellow;
+    justify-content: center;
+    align-self: center;
 }
 
-.preloader{
+.preloader {
     border: none;
 }
-.preloader img{
+
+.preloader img {
     stroke: #000;
 }
 
-.dropzone--active{
+.dropzone--active {
     background: yellow;
 }
 
-.songLists{
+.songLists {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
@@ -116,15 +110,15 @@ aside.primary-aside a.active {
    margin-bottom: 30px;
 }
 
-.error, .success{
-    color: red;
-    text-align: left;
+.error, .success {
     padding: 20px 0;
-}
-.success{
-    color: green;
+    text-align: left;
+    color: red;
 }
 
+.success {
+    color: green;
+}
 
 .panel-white {
   color: #333;
@@ -142,8 +136,6 @@ aside.primary-aside a.active {
    margin-right: 10px;
 }
 
-
-
 /*home page styles*/
 .home-title{
     font-size: 90px;
@@ -154,7 +146,6 @@ aside.primary-aside a.active {
 }
 
 /* home page styles*/
-
 .alert-text{
    padding-left: 10px;
 }
