@@ -68,7 +68,7 @@ export default class Authorization extends Component {
     renderLogIn(){
         return(
              <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-6">
                     <div className="sign-in-back">
                         <h1 className="sign-in-title">Вход</h1>
                         <div className="form-group">

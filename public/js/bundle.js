@@ -26466,47 +26466,62 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'app' },
-	      _react2.default.createElement('header', { className: 'primary-header' }),
+	      { className: 'home' },
 	      _react2.default.createElement(
-	        'aside',
-	        { className: 'primary-aside' },
+	        'nav',
+	        { className: 'navbar navbar-inverse' },
 	        _react2.default.createElement(
-	          'ul',
-	          null,
+	          'div',
+	          { className: 'container-fluid' },
 	          _react2.default.createElement(
-	            'li',
-	            null,
+	            'ul',
+	            { className: 'nav navbar-nav' },
 	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/', activeClassName: 'active' },
-	              '\u0413\u043B\u0430\u0432\u043D\u0430\u044F'
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#' },
+	                '\u0413\u043B\u0430\u0432\u043D\u0430\u044F'
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
-	            'li',
-	            null,
+	            'div',
+	            { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
 	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/login', activeClassName: 'active' },
-	              '\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u044F'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/songs', activeClassName: 'active' },
-	              '\u0410\u0443\u0434\u0438\u043E\u0437\u0430\u043F\u0438\u0441\u0438'
+	              'ul',
+	              { className: 'nav navbar-nav navbar-right' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: '/login', activeClassName: 'active ' },
+	                  '\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u044F'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouter.Link,
+	                  { to: '/songs', activeClassName: 'active' },
+	                  '\u0410\u0443\u0434\u0438\u043E\u0437\u0430\u043F\u0438\u0441\u0438'
+	                )
+	              )
 	            )
 	          )
 	        )
 	      ),
 	      _react2.default.createElement(
-	        'main',
-	        null,
-	        this.props.children
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement(
+	          'main',
+	          null,
+	          this.props.children
+	        )
 	      )
 	    );
 	  }
@@ -26582,9 +26597,27 @@
 	      "div",
 	      { className: "home-page" },
 	      _react2.default.createElement(
-	        "h1",
-	        null,
-	        "\u041D\u0430\u0439\u0434\u0438 \u0441\u0432\u043E\u0438 \u0430\u0443\u0434\u0438\u043E\u0437\u0430\u043F\u0438\u0441\u0438"
+	        "div",
+	        { className: "row" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col-md-6 col-md-offset-1" },
+	          _react2.default.createElement(
+	            "h1",
+	            { className: "home-title" },
+	            "Similario"
+	          ),
+	          _react2.default.createElement(
+	            "h4",
+	            { className: "home-desc" },
+	            "\u0422\u0435\u043F\u0435\u0440\u044C \u043D\u0430\u0439\u0442\u0438 \u043F\u043E\u0445\u043E\u0436\u0438\u0445 \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u0435\u0439 \u043A \u043B\u044E\u0431\u0438\u043C\u044B\u043C \u0430\u0440\u0442\u0438\u0441\u0442\u0430\u043C \u0441\u0442\u0430\u043B\u043E \u043B\u0435\u0433\u0447\u0435."
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col-md-3" },
+	          _react2.default.createElement("img", { src: "/images/icon_main.svg" })
+	        )
 	      )
 	    );
 	  }
@@ -26688,11 +26721,15 @@
 	        value: function renderLogOut() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { className: 'row' },
 	                _react2.default.createElement(
-	                    'button',
-	                    { onClick: this.onLogout },
-	                    '\u0412\u044B\u0439\u0442\u0438'
+	                    'div',
+	                    { className: 'col-md-12 sign-out-button' },
+	                    _react2.default.createElement(
+	                        'button',
+	                        { onClick: this.onLogout, className: 'btn btn-danger btn-large' },
+	                        '\u0412\u044B\u0439\u0442\u0438'
+	                    )
 	                )
 	            );
 	        }
@@ -26701,23 +26738,35 @@
 	        value: function renderLogIn() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { className: 'row' },
 	                _react2.default.createElement(
-	                    'h1',
-	                    null,
-	                    '\u0412\u043E\u0439\u0442\u0438'
-	                ),
-	                _react2.default.createElement('input', { type: 'text', value: this.state.nickname, onChange: this.handleChangeNickname }),
-	                _react2.default.createElement(
-	                    'button',
-	                    { onClick: this.onLogin },
-	                    '\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F'
-	                ),
-	                this.state.error ? _react2.default.createElement(
 	                    'div',
-	                    { style: { color: "#cc0000" } },
-	                    this.state.errorMsg
-	                ) : _react2.default.createElement('div', null)
+	                    { className: 'col-md-6' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'sign-in-back' },
+	                        _react2.default.createElement(
+	                            'h1',
+	                            { className: 'sign-in-title' },
+	                            '\u0412\u0445\u043E\u0434'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'form-group' },
+	                            this.state.error ? _react2.default.createElement(
+	                                'div',
+	                                { className: 'alert alert-danger' },
+	                                this.state.errorMsg
+	                            ) : _react2.default.createElement('div', null),
+	                            _react2.default.createElement('input', { type: 'text', value: this.state.nickname, onChange: this.handleChangeNickname, className: 'form-control', placeholder: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043B\u043E\u0433\u0438\u043D' }),
+	                            _react2.default.createElement(
+	                                'button',
+	                                { onClick: this.onLogin, className: 'btn btn-success' },
+	                                '\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F'
+	                            )
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }, {
@@ -27281,8 +27330,26 @@
 	        value: function renderNoAuth() {
 	            return _react2.default.createElement(
 	                'div',
-	                { style: { color: 'red' } },
-	                '\u0412\u044B \u043D\u0435 \u0432\u043E\u0448\u043B\u0438 \u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u0443'
+	                { className: 'row' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'col-md-4 col-md-offset-4' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'alert alert-danger', role: 'alert' },
+	                        _react2.default.createElement('span', { className: 'glyphicon glyphicon-exclamation-sign', 'aria-hidden': 'true' }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'sr-only' },
+	                            'Error:'
+	                        ),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'alert-text' },
+	                            '\u0412\u044B \u043D\u0435 \u0432\u043E\u0448\u043B\u0438 \u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u0443'
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }, {
@@ -27405,16 +27472,26 @@
 	                        var recommended = res.recommended;
 	                        songs.forEach(function (item, i) {
 	                            songList.push(_react2.default.createElement(
-	                                'li',
-	                                { key: i },
-	                                (item.artists[0].yandex_name ? item.artists[0].yandex_name : item.artists[0].name) + "-" + item.title
+	                                'div',
+	                                { className: 'panel panel-white post' },
+	                                _react2.default.createElement('img', { src: '/images/microphone.jpg' }),
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    { key: i },
+	                                    (item.artists[0].yandex_name ? item.artists[0].yandex_name : item.artists[0].name) + "-" + item.title
+	                                )
 	                            ));
 	                        });
 	                        recommended.forEach(function (item2, j) {
 	                            recommendedList.push(_react2.default.createElement(
-	                                'li',
-	                                { key: j },
-	                                item2.yandex_name ? item2.yandex_name : item2.name
+	                                'div',
+	                                { className: 'panel panel-white ' },
+	                                _react2.default.createElement('img', { src: '/images/microphone.jpg' }),
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    { key: j },
+	                                    item2.yandex_name ? item2.yandex_name : item2.name
+	                                )
 	                            ));
 	                        });
 	
@@ -27442,11 +27519,7 @@
 	                        null,
 	                        '\u0421\u043F\u0438\u0441\u043E\u043A \u0430\u0443\u0434\u0438\u043E\u0437\u0430\u043F\u0438\u0441\u0435\u0439'
 	                    ),
-	                    _react2.default.createElement(
-	                        'ol',
-	                        { className: 'songList' },
-	                        this.state.list
-	                    )
+	                    this.state.list
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -27456,11 +27529,7 @@
 	                        null,
 	                        '\u0421\u043F\u0438\u0441\u043E\u043A \u0440\u0435\u043A\u043E\u043C\u043C\u0435\u043D\u0434\u0430\u0446\u0438\u0439'
 	                    ),
-	                    _react2.default.createElement(
-	                        'ol',
-	                        null,
-	                        this.state.recommendedSongs
-	                    )
+	                    this.state.recommendedSongs
 	                )
 	            );
 	        }
@@ -27830,14 +27899,16 @@
 	                                listS = _this2.state.successMsg;
 	                                listS.push(_react2.default.createElement(
 	                                    'li',
-	                                    { key: i },
-	                                    '\u0424\u0430\u0439\u043B \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043D - ' + item.name
+	                                    { className: 'alert alert-success', key: i },
+	                                    '\n                                \u0424\u0430\u0439\u043B \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043D - ' + item.name,
+	                                    '. \u0422\u0435\u043F\u0435\u0440\u044C \u043F\u0435\u0440\u0435\u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443.'
 	                                ));
 	                            } else {
 	                                listS = [_react2.default.createElement(
 	                                    'li',
-	                                    { key: i },
-	                                    '\u0424\u0430\u0439\u043B \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043D - ' + item.name
+	                                    { className: 'alert alert-success', key: i },
+	                                    '\n                                \u0424\u0430\u0439\u043B \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043D - ' + item.name,
+	                                    '. \u0422\u0435\u043F\u0435\u0440\u044C \u043F\u0435\u0440\u0435\u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0443.'
 	                                )];
 	                            }
 	                            _this2.setState({
