@@ -1,3 +1,3 @@
 module.exports = {
-    API_URL: 'http://localhost:8080/api'
+    API_URL: 'http://95.213.191.63/api'
 };
