@@ -25,16 +25,10 @@ export default class UploadSongs extends Component {
         if (this.state.show !== nextState.show) {
             return true;
         }
-        if (this.state.error !== nextState.error) {
+        if (this.state.error !== nextState.error || this.state.errorMsg !== nextState.errorMsg) {
             return true;
         }
-        if (this.state.errorMsg !== nextState.errorMsg) {
-            return true;
-        }
-        if (this.state.success !== nextState.success) {
-            return true;
-        }
-        if (this.state.successMsg !== nextState.successMsg) {
+        if (this.state.success !== nextState.success || this.state.successMsg !== nextState.successMsg) {
             return true;
         }
         return true;
@@ -61,27 +55,30 @@ export default class UploadSongs extends Component {
             });
 
             acceptedFiles.forEach((item, i, arr) =>{
-
+                let list = [], listS = [];
                 uploadSong(item, this.props.userId, (err, res) => {
-                    if(err){
-                        let list;
+                    if(err === 'Error'){
+                        console.log('error')
                         if(this.state.error){
                             list = this.state.errorMsg;
-                            list.push(<li key={i}>{'Ошибка в описании файла ' + item.name}</li>)
+                            list.push(<li key={i}>{`Ошибка (${res}) при загрузке файла ${item.name}`}</li>)
+                                this.setState({
+                                    error: true,
+                                    errorMsg: list
+                                });
                         }else{
-                            list = [<li key={i}>{'Ошибка в описании файла ' + item.name}</li>]
+                            list = [<li key={i}>{`Ошибка (${res}) при загрузке файла ${item.name}`}</li>]
+                            this.setState({
+                                error: true,
+                                errorMsg: list
+                            });
                         }
-                        this.setState({
-                            error: true,
-                            errorMsg: list
-                        });
                     }else {
-                        let listS;
                         if(this.state.success){
                             listS = this.state.successMsg;
-                            list.push(<li key={i}>{'Файл загружен - ' + item.name}</li>)
+                            listS.push(<li key={i}>{`Файл загружен - ${item.name}`}</li>)
                         }else{
-                            listS = [<li key={i}>{'Файл загружен - ' + item.name}</li>]
+                            listS = [<li key={i}>{`Файл загружен - ${item.name}`}</li>]
                         }
                         this.setState({
                             success: true,

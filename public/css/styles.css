@@ -1,10 +1,10 @@
 .app {
-  display: flex;
     font-family: Arial;
+    display: flex;
 }
 
 aside.primary-aside {
-  width: 200px;
+    width: 200px;
 }
 
 aside.primary-aside a.active {
@@ -12,42 +12,44 @@ aside.primary-aside a.active {
 }
 
 main {
-  flex: 1;
+    flex: 1;
 }
 
-.dropzone{
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    padding: 20px;
-    color: #000;
+.dropzone {
     font-family: Arial;
     font-weight: bold;
-    border: 2px dashed yellow
+    display: flex;
+    padding: 20px;
+    color: #000;
+    border: 2px dashed yellow;
+    justify-content: center;
+    align-self: center;
 }
 
-.preloader{
+.preloader {
     border: none;
 }
-.preloader img{
+
+.preloader img {
     stroke: #000;
 }
 
-.dropzone--active{
+.dropzone--active {
     background: yellow;
 }
 
-.songLists{
+.songLists {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
 }
 
-.error, .success{
-    color: red;
-    text-align: left;
+.error, .success {
     padding: 20px 0;
+    text-align: left;
+    color: red;
 }
-.success{
+
+.success {
     color: green;
 }
