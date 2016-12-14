@@ -12,9 +12,14 @@ Link to yarn: <https://yarnpkg.com/en/docs/install>
 
 ## Installing and Running
 
+Enter app directory then:
+
 ```sh
 # Install Node Modules
-yarn install
+yarn
+
+# Build the App
+webpack
 
 # Start the Server
 yarn start
