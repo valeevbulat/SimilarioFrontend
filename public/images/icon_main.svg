@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="178px" viewBox="0 0 128 178" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="RU" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_color">
+            <g id="Imported-Layers-3">
+                <path d="M124,118.296296 C124,150.241714 96.2417143,178 62,178 C27.7582857,178 0,150.241714 0,118.296296 C0,81.7582857 27.7582857,54 62,54 C96.2417143,54 124,81.7582857 124,118.296296" id="Fill-1" fill="#FFCC02"></path>
+                <path d="M93,116 C93,133.123273 79.1232727,147 62,147 C44.8767273,147 31,133.123273 31,116 C31,98.8767273 44.8767273,85 62,85 C79.1232727,85 93,98.8767273 93,116" id="Fill-2" fill="#EE0000"></path>
+                <polygon id="Fill-3" fill="#EE0000" points="75 22 93 22 93 115 75 115"></polygon>
+                <polygon id="Fill-4" fill="#EE0000" points="75 0 75 34.6666667 128 52 128 17.3333333"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

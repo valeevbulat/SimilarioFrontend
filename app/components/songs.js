@@ -20,9 +20,18 @@ export default class Songs extends Component {
 
     renderNoAuth(){
         return(
-            <div style={{color: 'red'}}>
-                Вы не вошли в систему
-            </div>
+            <div className="row">
+                <div className="col-md-4 col-md-offset-4">
+                    <div className="alert alert-danger" role="alert">
+                    <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span className="sr-only">Error:</span>
+                        <span className="alert-text">Вы не вошли в систему</span>
+                    </div>
+                </div>   
+            </div>   
+            
+                
+            
         )
     }
 

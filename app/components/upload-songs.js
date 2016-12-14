@@ -76,9 +76,13 @@ export default class UploadSongs extends Component {
                     }else {
                         if(this.state.success){
                             listS = this.state.successMsg;
-                            listS.push(<li key={i}>{`Файл загружен - ${item.name}`}</li>)
+                            listS.push(<li className="alert alert-success" key={i}>{`
+                                Файл успешно загружен - ${item.name}`}. Теперь перезагрузите страницу.</li>
+                            )
                         }else{
-                            listS = [<li key={i}>{`Файл загружен - ${item.name}`}</li>]
+                            listS = [<li className="alert alert-success" key={i}>{`
+                                Файл успешно загружен - ${item.name}`}. Теперь перезагрузите страницу.</li>
+                            ]
                         }
                         this.setState({
                             success: true,

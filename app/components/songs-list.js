@@ -7,8 +7,16 @@ export default class SongsList extends Component {
         super(props);
 
         this.state =  {
-            list: [<li key="0" style={{'listStyle': 'none'}}> <img src="/images/preloader.svg" /> </li>],
-            recommendedSongs: [<li key="0" style={{'listStyle': 'none'}}> <img src="/images/preloader.svg" /> </li>]
+            list: [
+            
+                <li key="0" style={{'listStyle': 'none'}}> <img src="/images/preloader.svg" /> </li>
+            
+            ],
+            recommendedSongs: [ 
+                
+                    <li key="0" style={{'listStyle': 'none'}}> <img src="/images/preloader.svg" /> </li>
+                
+            ]
         };
     }
 
@@ -35,11 +43,21 @@ export default class SongsList extends Component {
                 let songs = res.songs;
                 let recommended = res.recommended;
                 songs.forEach( (item, i) => {
-                    songList.push(<li key={i}>{(item.artists[0].yandex_name ? item.artists[0].yandex_name : item.artists[0].name)+ "-" + item.title}</li>)
+                    songList.push(
+                        <div className="panel panel-white post">
+                            <img src="/images/microphone.jpg"/>
+                            <li key={i}>{(item.artists[0].yandex_name ? item.artists[0].yandex_name : item.artists[0].name) + "-" + item.title}</li>
+                        </div>    
+                    )
 
                 });
                 recommended.forEach( (item2, j) => {
-                    recommendedList.push(<li key={j}>{(item2.yandex_name ? item2.yandex_name : item2.name)}</li>)
+                    recommendedList.push(
+                        <div className="panel panel-white ">
+                            <img src="/images/microphone.jpg"/>
+                            <li key={j}>{(item2.yandex_name ? item2.yandex_name : item2.name)}</li>
+                        </div>
+                    )
 
                 });
 
@@ -58,17 +76,12 @@ export default class SongsList extends Component {
             <div  className="songLists">
                 <div className="songList">
                     <h1>Список аудиозаписей</h1>
-
-                    <ol className="songList">
-                        {this.state.list}
-                    </ol>
+                    {this.state.list}
                 </div>
                 <div className="songList">
                     <h1>Список рекоммендаций</h1>
-
-                    <ol>
-                        {this.state.recommendedSongs}
-                    </ol>
+                    {this.state.recommendedSongs}
+                    
                 </div>
 
             </div>
